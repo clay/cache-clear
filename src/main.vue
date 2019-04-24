@@ -74,13 +74,13 @@
 <script>
   'use strict';
 
-  const purge = require('./purge'),
+  const purge = require('./utils/purge'),
+    { MIN_LINKS_LENGTH } = require('./utils/constants'),
     {
       UiTextbox,
       UiIcon,
       UiButton
-    } = window.kiln.utils.components,
-    MIN_LINKS_LENGTH = 2;
+    } = window.kiln.utils.components;
 
   module.exports = {
     data() {
@@ -95,9 +95,16 @@
       UiButton
     },
     methods: {
+      /**
+       * Checks whether the links count have changed or not
+       */
       fieldChanged() {
         if (this.links.filter(link => !link).length < MIN_LINKS_LENGTH) this.links.push('');
       },
+      /**
+       * Purges cache from Fastly for each link
+       * @param {Object} event
+       */
       clearAsset(event) {
         const links = this.links
           .filter(link => !!link)

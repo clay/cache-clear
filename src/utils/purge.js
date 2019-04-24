@@ -1,5 +1,7 @@
 'use strict';
 
+const { FASTLY_API_KEY } = require('./constants');
+
 /**
  * Make a purge request to Fastly
  * @param {string} url
@@ -7,7 +9,7 @@
  * @throws {Error} Throws an error if the request was not successful
  */
 module.exports = url => {
-  return fetch(`https://api.fastly.com/purge/${url}`, {
+  return fetch(`${FASTLY_API_KEY}/${url}`, {
     method: 'POST',
     headers: {
       'Fastly-Key': process.env.FASTLY_API_KEY
@@ -21,4 +23,4 @@ module.exports = url => {
   .catch(e => {
     throw e;
   });
-}
+};
