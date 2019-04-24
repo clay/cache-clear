@@ -2,8 +2,11 @@
 
 /**
  * Make a purge request to Fastly
+ * @param {string} url
+ * @returns {Promise<Object>} An object containing the request data
+ * @throws {Error} Throws an error if the request was not successful
  */
-module.exports = (url) => {
+module.exports = url => {
   return fetch(`https://api.fastly.com/purge/${url}`, {
     method: 'POST',
     headers: {
@@ -17,5 +20,5 @@ module.exports = (url) => {
   })
   .catch(e => {
     throw e;
-  })
+  });
 }
