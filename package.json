@@ -1,15 +1,23 @@
 {
   "name": "cache-clear",
   "version": "0.0.1",
-  "description": "",
-  "main": "dist/cache-clear.min.js",
+  "description": "Clay Kiln Plugin to Clear Fastly Cache",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clay/cache-clear.git"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/clay/pyxis-frontend/issues"
+  },
+  "homepage": "https://github.com/clay/pyxis-frontend#readme",
   "dependencies": {
     "vue": "^2.6.10"
   },
