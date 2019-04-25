@@ -1,9 +1,10 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin'),
-  env = process.env.NODE_ENV || 'development';
+  MinifyPlugin = require('babel-minify-webpack-plugin'),
+  webpack = require('webpack');
 
 module.exports = {
-  mode: env,
-  entry: `${__dirname}/src/index.js`,
+  mode: 'development',
+  entry: './src/index.js',
   output: {
     libraryTarget: 'umd',
   },
@@ -28,11 +29,8 @@ module.exports = {
       }
     ]
   },
-  resolve: {
-    extensions: ['.js', '.vue']
-  },
-  plugins: [new VueLoaderPlugin()],
-  optimization: {
-    minimize: true
-  }
+  plugins: [
+    new VueLoaderPlugin(),
+    new MinifyPlugin()
+  ]
 };

@@ -19,7 +19,7 @@ function CacheClearPlugin(store) {
         const pageUrl = state.page.state.url || '';
 
         purge(pageUrl)
-          .then(`Purged url: ${pageUrl}`);
+          .then(() => console.log(`Purged url: ${pageUrl}`));
       }
     }
   });
