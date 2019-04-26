@@ -26,7 +26,7 @@ function CacheClearPlugin(store) {
 };
 
 module.exports = {
-  NavButton: require('./nav-button.vue').default,
-  NavContent: require('./main.vue').default,
+  NavButton: require('./nav-button').default,
+  NavContent: require('./main').default,
   CacheClearPlugin
 };
