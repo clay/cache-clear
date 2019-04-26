@@ -1,10 +1,17 @@
-const VueLoaderPlugin = require('vue-loader/lib/plugin'),
-  env = process.env.NODE_ENV || 'development';
+const path = require('path'),
+  VueLoaderPlugin = require('vue-loader/lib/plugin'),
+  libraryName = 'cache-clear',
+  outputFilename = process.env.NODE_ENV === 'production'
+    ? `${libraryName}.min.js`
+    : `${libraryName}.js`
 
 module.exports = {
-  mode: env,
-  entry: `${__dirname}/src/index.js`,
+  mode: process.env.NODE_ENV,
+  entry: path.resolve(__dirname, 'src/index.js'),
   output: {
+    path: path.resolve(__dirname, 'dist/'),
+    filename: outputFilename,
+    library: libraryName,
     libraryTarget: 'umd',
   },
   module: {
@@ -31,8 +38,5 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue']
   },
-  plugins: [new VueLoaderPlugin()],
-  optimization: {
-    minimize: true
-  }
+  plugins: [new VueLoaderPlugin()]
 };

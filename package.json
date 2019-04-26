@@ -1,11 +1,12 @@
 {
   "name": "cache-clear",
-  "version": "0.0.1",
+  "version": "0.0.1-beta.0",
   "description": "Clay Kiln Plugin to Clear Fastly Cache",
-  "main": "dist/main.js",
+  "main": "dist/cache-clear.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack",
+    "dev": "NODE_ENV=development webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,6 @@
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "babel-loader": "^8.0.5",
-    "babel-minify-webpack-plugin": "^0.3.1",
     "css-loader": "^2.1.1",
     "node-sass": "^4.11.0",
     "sass-loader": "^7.1.0",
