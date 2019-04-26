@@ -21,7 +21,7 @@ npm install --save cache-clear
 2. Create a directory for your plugin inside the kiln/plugins directory in the services section
 
 ```bash
-mkdir PROJECT_DIRECTORY/app/services/kiln/plugins/PLGUIN_NAME
+mkdir PROJECT_DIRECTORY/app/services/kiln/plugins/PLUGIN_NAME
 ```
 
 3. Create an `index.js` file in the previous directory created, importing main components for the plugin and setting them in the specific `window.kiln` object.
