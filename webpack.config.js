@@ -1,9 +1,11 @@
+'use strict';
+
 const path = require('path'),
   VueLoaderPlugin = require('vue-loader/lib/plugin'),
   libraryName = 'cache-clear',
   outputFilename = process.env.NODE_ENV === 'production'
     ? `${libraryName}.min.js`
-    : `${libraryName}.js`
+    : `${libraryName}.js`;
 
 module.exports = {
   mode: process.env.NODE_ENV,
