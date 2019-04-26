@@ -15,12 +15,12 @@ module.exports = url => {
       'Fastly-Key': window.process.env.FASTLY_API_KEY
     }
   })
-  .then(res => res.json())
-  .then(res => {
-    res.url = url; // Attach the url to the response to use for messaging
-    return res;
-  })
-  .catch(e => {
-    throw e;
-  });
+    .then(res => res.json())
+    .then(res => {
+      res.url = url; // Attach the url to the response to use for messaging
+      return res;
+    })
+    .catch(e => {
+      throw e;
+    });
 };
