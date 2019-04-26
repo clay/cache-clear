@@ -1,24 +1,27 @@
 module.exports = {
   env: {
     browser: false,
-    node: true,
+    es6: true,
     mocha: true,
-    es6: true
+    node: true
   },
   // add global vars for chai, etc
   globals: {
-    expect: false,
     chai: false,
+    expect: false,
     sinon: false
   },
   rules: {
     // possible errors
     'no-extra-parens': 1,
-    'valid-jsdoc': [1, {
-      requireReturn: false,
-      requireParamDescription: false,
-      requireReturnDescription: false
-    }],
+    'valid-jsdoc': [
+      1,
+      {
+        requireReturn: false,
+        requireParamDescription: false,
+        requireReturnDescription: false
+      }
+    ],
     // best practices
     complexity: [2, 8],
     'default-case': 2,
@@ -65,4 +68,4 @@ module.exports = {
     'max-depth': [2, 4],
     'max-params': [2, 4]
   }
-}
+};
