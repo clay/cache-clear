@@ -1,6 +1,6 @@
 {
   "name": "cache-clear",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Clay Kiln Plugin to Clear Fastly Cache",
   "main": "dist/cache-clear.js",
   "scripts": {
