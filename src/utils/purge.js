@@ -44,11 +44,9 @@ const purgeAuthenticated = function (url) {
  * @throws {Error} Throws an error if the request was not successful
  */
 const purge = function (url) {
-  return (
-    window.process.env.FASTLY_API_KEY
+  return window.process.env.FASTLY_API_KEY
     ? purgeAuthenticated(url)
-    : purgeUnauthenticated(url)
-  );
+    : purgeUnauthenticated(url);
 }
 
 module.exports = purge;
