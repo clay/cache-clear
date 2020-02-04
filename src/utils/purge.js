@@ -14,9 +14,6 @@ const purgeUnauthenticated = function (url) {
     .then(res => {
       res.url = url;
       return res;
-    })
-    .catch(e => {
-      throw e;
     });
 };
 
@@ -37,9 +34,6 @@ const purgeAuthenticated = function (url) {
     .then(res => {
       res.url = url; // Attach the url to the response to use for messaging
       return res;
-    })
-    .catch(e => {
-      throw e;
     });
 };
 
