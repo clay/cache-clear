@@ -10,6 +10,9 @@ The Kiln project that is going to use this plugin should set the following envir
 FASTLY_API_KEY=cool-api-key
 ```
 
+If `FASTLY_API_KEY` is not provided, the plugin will fall back to making unauthenticated HTTP requests
+with the `PURGE` method. This is a good option if using IP origin rules for allowing purges.
+
 ## Getting Started
 
 1. Install the package as a dependency
