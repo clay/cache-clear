@@ -9,7 +9,7 @@ const { FASTLY_API_URL } = require('./constants');
  * @throws {Error} Throws an error if the request was not successful
  */
 const purgeUnauthenticated = function (url) {
-  return fetch(url, { method: 'PURGE' })
+  return fetch(url.replace(/^(https?:\/\/)?/, 'https://'), { method: 'PURGE' })
     .then(res => res.json())
     .then(res => {
       res.url = url;
